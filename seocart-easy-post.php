@@ -8,7 +8,7 @@
 		$variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
     }
 ?>
-<div class="oxy-post ct-div-block prodotto grid mini <?php if (is_featured()){ echo 'starred'; }; ?> <?php $current_tags = get_the_terms( get_the_ID(), 'product_tag' ); foreach ($current_tags as $tag) { $tag_title = $tag->name; echo $tag_title.' ';} ?>">
+<div class="oxy-post ct-div-block prodotto grid mini <?php if ($product->get_featured()){ echo 'starred'; } ?> <?php $current_tags = get_the_terms( get_the_ID(), 'product_tag' ); foreach ($current_tags as $tag) { $tag_title = $tag->name; echo $tag_title.' ';} ?>">
   <div class="ct-div-block box-prodotto">
     <div class="ct-div-block">
       <div class="oxy-product-builder oxy-woo-element">
